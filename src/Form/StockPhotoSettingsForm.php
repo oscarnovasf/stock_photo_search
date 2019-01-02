@@ -39,6 +39,23 @@ class StockPhotoSettingsForm extends ConfigFormBase {
       '#open' => TRUE,
       '#group' => 'settings',
       '#description' => $this->t('When you activate one of the stock photo providers you can configure your API keys here.'),
+    ];    
+
+    $form['info']['about'] = [
+      '#type' => 'details',
+      '#title' => $this->t('About'),
+      '#open' => TRUE,
+      '#group' => 'settings',
+    ];
+
+    $form['info']['about']['info']['info_0'] = [
+      '#type' => 'item',
+      '#markup' => $this->t('This module and submodules are maintained by Óscar Novas') . ' (<a href="mailto:hola@oscarnovas.com">hola@oscarnovas.com.</a>)',
+    ];
+
+    $form['info']['about']['info']['info_1'] = [
+      '#type' => 'item',
+      '#markup' => $this->t('If you want to contribute to the development of this module you can make a donation here.') . '<br /><a href="https://www.paypal.me/oscarnovasf" target="_blank">paypal.me/oscarnovas</a>',
     ];
 
     return parent::buildForm($form, $form_state);
